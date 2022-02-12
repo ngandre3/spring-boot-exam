@@ -1,0 +1,60 @@
+<!-- 
+ * Name: Yin Tung Ng
+ * Student #: 991602581
+ * Assignment: Final Exam
+ * Course: PROG32758 - Java 3
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" media="all" href="../static/css/styles.css"
+  th:href="@{/css/styles.css}" />
+<title>Guess That Movie - Home</title>
+</head>
+<body>
+  <header class="box">
+    <div th:replace="fragments/header.html :: header"></div>
+    <hr>
+    <div th:replace="fragments/menu.html :: menu"></div>
+  </header>
+
+  <div class="div-center box">
+    <h1>Try to guess the name of a movie!</h1>
+    <form action="#" th:action="@{/start}" method="GET">
+      <input class="button" type="submit" value="Start Game" />
+    </form>
+    <br>
+
+    <img id="banner" height="100px" src="../static/images/banner.jpg"
+      th:src="@{/images/banner.jpg}" />
+
+    <h2>Game Rules</h2>
+    <p>A movie will be randomly selected from a list. The movies are famous G-rated
+      Disney and Pixar animated movies.</p>
+    <p>You will be asked to guess a letter (a-z). If your letter was found in the
+      movie name, then you have a chance to guess the whole movie name.</p>
+
+    <p>
+      <span class="highlight">Winning the Game:</span>
+      If you guess the movie name correctly, then you win the game.
+    </p>
+    <p>
+      <span class="highlight">Losing the Game:</span>
+      If you guess the letter or movie name wrongly, then you earn 1 fail. If you get 7
+      fails, you lose the game.
+    </p>
+
+    <p>
+      <span class="highlight">Scoring:</span>
+      A game ends after 7 fails or when the movie name is guessed correctly. You gain 5
+      points when you win a game. You lose 5 points when you lose a game.
+    </p>
+
+  </div>
+
+</body>
+</html>

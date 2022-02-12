@@ -1,0 +1,60 @@
+<!-- 
+ * Name: Yin Tung Ng
+ * Student #: 991602581
+ * Assignment: Final Exam
+ * Course: PROG32758 - Java 3
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" media="all" href="../static/css/styles.css"
+  th:href="@{/css/styles.css}" />
+<title>Guess A Letter</title>
+</head>
+<body>
+  <header class="box">
+    <div th:replace="fragments/header.html :: header"></div>
+    <hr>
+    <div th:replace="fragments/menu.html :: menu"></div>
+  </header>
+
+  <div class="div-center box">
+    <h1>Guess A Letter</h1>
+
+    <p class="alert" th:if="${wrong}">
+      ** Your guess was wrong. You now have
+      <span th:text="${session.fails}">0</span>
+      out of 7 Fails. **
+    </p>
+
+    <p>A movie name was randomly chosen.</p>
+
+    <p>
+      Hidden movie name:
+      <span class="highlight" th:text=${session.hidden}>******_****</span>
+    </p>
+
+    <div class="alert" sec:authorize="hasRole('ADMIN')">
+      [Admin-only] Answer:
+      <span th:text=${session.movie.movieName}>Movie Name</span>
+    </div>
+
+    <p>Try to guess a letter (a-z). The game will check if your letter can be found
+      inside the movie name.</p>
+
+    <form action="#" th:action="@{/guessletter}" method="GET">
+      <label for="letter">Lowercase Letter: </label>
+      <input type="text" id="letter" name="letter" pattern="[a-z]+" size="4" maxlength="1"
+        autofocus required title="1 lowercase letter (a-z)">
+      <br>
+      <br>
+      <input class="button" type="submit" value="Guess!" />
+    </form>
+  </div>
+
+</body>
+</html>

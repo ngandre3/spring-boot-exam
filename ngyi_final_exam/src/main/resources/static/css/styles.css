@@ -1,0 +1,118 @@
+/*
+ * Name: Yin Tung Ng
+ * Student #: 991602581
+ * Assignment: Final Exam
+ * Course: PROG32758 - Java 3
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font: 18px Arial, sans-serif;
+  background-color: #494949;
+}
+
+h1, h3, .title {
+  color: SpringGreen;
+  text-align: center;
+}
+
+h2 {
+  color: orange;
+  text-align: center;
+}
+
+input, select {
+  font-size: 16px;
+}
+
+table {
+  margin: 0px auto 8px;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 4px;
+}
+
+.alert, .error {
+  color: Crimson;
+}
+
+.box, .box2 {
+  border: solid 4px MediumSeaGreen;
+  border-radius: 8px;
+  margin: 10px auto;
+  padding: 10px 24px;
+}
+
+.box {
+  max-width: 800px;
+}
+
+.box2 {
+  max-width: 600px;
+}
+
+.button, .button2 {
+  margin: 6px 8px;
+  padding: 6px 12px;
+  font-size: 16px;
+  text-decoration: none;
+  transition-duration: 0.2s;
+  width: 120px;
+}
+
+.button {
+  background-color: MediumSeaGreen;
+  border: solid 2px MediumSeaGreen;
+  border-radius: 8px;
+  color: white;
+}
+
+.button:hover {
+  background-color: DarkGreen;
+  border-color: DarkGreen;
+}
+
+.button2 {
+  background-color: Purple;
+  border: solid 2px Purple;
+  border-radius: 8px;
+  color: white;
+}
+
+.button2:hover {
+  background-color: DarkSlateBlue;
+  border-color: DarkSlateBlue;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container .box {
+  margin: 16px;
+}
+
+.div-center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+label, .highlight {
+  color: orange;
+}
+
+.success {
+  color: SpringGreen;
+}
+
+.text-center {
+  text-align: center;
+}

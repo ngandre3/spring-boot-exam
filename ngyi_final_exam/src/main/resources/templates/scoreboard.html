@@ -1,0 +1,60 @@
+<!-- 
+ * Name: Yin Tung Ng
+ * Student #: 991602581
+ * Assignment: Final Exam
+ * Course: PROG32758 - Java 3
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" media="all" href="../static/css/styles.css"
+  th:href="@{/css/styles.css}" />
+<link rel="stylesheet" type="text/css" media="all" href="../static/css/scoreboard.css"
+  th:href="@{/css/scoreboard.css}" />
+<title>Scoreboard</title>
+</head>
+<body>
+  <header class="box">
+    <div th:replace="fragments/header.html :: header"></div>
+    <hr>
+    <div th:replace="fragments/menu.html :: menu"></div>
+  </header>
+
+  <div class="div-center box">
+    <h1>Scoreboard</h1>
+
+    <p sec:authorize="isAuthenticated()">
+      Current score:
+      <span class="highlight" th:text="${session.score}">0</span>
+    </p>
+
+    <h2>Top 5 Scores</h2>
+
+    <div class="sb">
+      <table border="2">
+        <tr>
+          <th>Name</th>
+          <th>Games Played</th>
+          <th>Score</th>
+        </tr>
+
+        <tr th:each="user : ${users}">
+          <td th:text="${user.userName}"></td>
+          <td th:text="${user.games_played}"></td>
+          <td th:text="${user.score}"></td>
+        </tr>
+      </table>
+    </div>
+
+    <br>
+    <form action="#" th:action="@{/}" method="GET">
+      <input class="button" type="submit" value="Restart" />
+    </form>
+  </div>
+
+</body>
+</html>

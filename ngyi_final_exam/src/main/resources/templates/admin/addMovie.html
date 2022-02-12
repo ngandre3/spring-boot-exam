@@ -1,0 +1,40 @@
+<!-- 
+ * Name: Yin Tung Ng
+ * Student #: 991602581
+ * Assignment: Final Exam
+ * Course: PROG32758 - Java 3
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" media="all" href="../../static/css/admin.css"
+  th:href="@{/css/admin.css}" />
+<title>Guess That Movie</title>
+</head>
+<body>
+
+  <div class="div-center box">
+    <h1>Admin Page</h1>
+    <h2>Add New Movie</h2>
+
+    <form action="#" th:action="@{/admin/insertmovie}">
+      <br>
+      <label for="movieName">New Movie Name: </label>
+      <input type="text" id="movieName" name="movieName" autofocus required />
+      <br>
+      <br>
+      <input class="button" type="submit" value="Add Movie" />
+    </form>
+
+    <br>
+    <form action="#" th:action="@{/admin/viewmovie}" method="GET">
+      <input class="button" type="submit" value="Back" />
+    </form>
+  </div>
+
+</body>
+</html>

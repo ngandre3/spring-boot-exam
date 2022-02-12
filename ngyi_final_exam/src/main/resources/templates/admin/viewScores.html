@@ -1,0 +1,55 @@
+<!-- 
+ * Name: Yin Tung Ng
+ * Student #: 991602581
+ * Assignment: Final Exam
+ * Course: PROG32758 - Java 3
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" media="all" href="../../static/css/admin.css"
+  th:href="@{/css/admin.css}" />
+<title>Guess That Movie</title>
+</head>
+<body>
+
+  <div class="div-center box">
+    <h1>Admin Page</h1>
+    <h2>Scoreboard Table</h2>
+
+    <table border="2">
+      <tr>
+        <th>scoreId</th>
+        <th>userId</th>
+        <th>User Name</th>
+        <th>Games Played</th>
+        <th>Score</th>
+      </tr>
+
+      <tr th:each="row : ${scoreRows}">
+        <td th:text="${row.scoreId}"></td>
+        <td th:text="${row.userId}"></td>
+        <td th:text="${row.userName}"></td>
+        <td th:text="${row.games_played}"></td>
+        <td th:text="${row.score}"></td>
+        <td>
+          <a href="#" th:href="@{/admin/editscore/{id}(id=${row.scoreId})}">EDIT</a>
+        </td>
+        <td>
+          <a href="#" th:href="@{/admin/deletescore/{id}(id=${row.scoreId})}">DELETE</a>
+        </td>
+      </tr>
+    </table>
+
+    <br>
+    <form action="#" th:action="@{/admin}" method="GET">
+      <input class="button" type="submit" value="Back" />
+    </form>
+  </div>
+
+</body>
+</html>

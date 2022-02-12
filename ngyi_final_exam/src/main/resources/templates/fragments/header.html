@@ -1,0 +1,25 @@
+<!-- 
+ * Name: Yin Tung Ng
+ * Student #: 991602581
+ * Assignment: Final Exam
+ * Course: PROG32758 - Java 3
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" media="all" href="../../static/css/styles.css"
+  th:href="@{/css/styles.css}" />
+<title>Guess That Movie</title>
+</head>
+<body>
+  <div class="div-center" th:fragment="header">
+    <img id="logo" height="50px" src="../../static/images/film-roll.jpg"
+      th:src="@{/images/film-roll.jpg}" />
+    <span class="title" style="font-size: 36pt;">Guess That Movie</span>
+  </div>
+</body>
+</html>

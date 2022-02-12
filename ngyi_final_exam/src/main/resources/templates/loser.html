@@ -1,0 +1,54 @@
+<!-- 
+ * Name: Yin Tung Ng
+ * Student #: 991602581
+ * Assignment: Final Exam
+ * Course: PROG32758 - Java 3
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" media="all" href="../static/css/styles.css"
+  th:href="@{/css/styles.css}" />
+<title>Game Over</title>
+</head>
+<body>
+  <header class="box">
+    <div th:replace="fragments/header.html :: header"></div>
+    <hr>
+    <div th:replace="fragments/menu.html :: menu"></div>
+  </header>
+
+  <div class="div-center box">
+    <h1>Game Over</h1>
+    <h2 class="alert">You Lost.</h2>
+    <p>
+      You got
+      <span class="alert">7 Fails.</span>
+    </p>
+    <p>
+      Answer:
+      <span class="highlight" th:text=${session.movie.movieName}>Movie Name</span>
+    </p>
+
+    <p sec:authorize="isAuthenticated()">
+      Current score:
+      <span class="highlight" th:text="${session.score}">0</span>
+    </p>
+
+    <form action="#" th:action="@{/}" method="GET">
+      <input class="button" type="submit" value="Restart" />
+    </form>
+
+    <div sec:authorize="isAuthenticated()">
+      <form action="#" th:action="@{/scoreboard}" method="GET">
+        <input class="button2" type="submit" value="Scoreboard" />
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>

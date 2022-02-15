@@ -11,3 +11,6 @@ Dependencies used:
 - Lombok
 - Spring Security
 - H2 database / SQL
+
+Overview video showing the running web app and its dependencies:
+https://youtu.be/xQerrAx_XUU
